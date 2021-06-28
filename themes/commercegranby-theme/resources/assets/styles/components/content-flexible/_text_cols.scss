@@ -1,0 +1,21 @@
+// ==========================================================================
+// Components / content-flexible / text_intro
+//
+// ==========================================================================
+
+.cf-text-cols {
+  position: relative;
+
+  .col-12 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__img {
+    img {
+      border-radius: 0.7rem;
+      overflow: hidden;
+    }
+  }
+}

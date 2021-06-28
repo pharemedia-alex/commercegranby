@@ -1,0 +1,32 @@
+// ==========================================================================
+// Settings / colors
+//
+// colors scheme of the project
+//
+// ==========================================================================
+
+// base color
+$color-white: #fff;
+$color-black: #2c2c2c;
+
+// main color scheme
+$color-primary: #d84127;
+$color-secondary: #56565b;
+
+// other colors
+$color-dark-red: #b63620;
+$color-dark-blue: #354c70;
+$color-mid-gray: #56565b;
+
+// color theme map used accross the website
+// used in objects > color themes
+// ".o-theme-{modifiername}", background-color, color
+// class are used on every color swatch in content management
+
+/*
+$color-themes: (
+  ( "light-green", $color-light-green, $color-primary ),
+  ( "mid-green", $color-secondary, $color-white ),
+  ( "dark-green", $color-primary, $color-light-green )
+);
+*/

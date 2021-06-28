@@ -1,0 +1,36 @@
+// ==========================================================================
+// Components / content-flexible / text_intro
+//
+// ==========================================================================
+
+.cf-text-intro {
+  position: relative;
+  color: $color-white;
+
+  &__title {
+    margin-bottom: rem-calc($spacing-small);
+    color: $color-primary;
+    text-align: center;
+
+    span {
+      display: block;
+      font-weight: 400;
+    }
+  }
+
+  &__text {
+    p {
+      @include fluid-type($breakpoint-sm, $breakpoint-lg, 24px, 32px);
+
+      font-family: $font-secondary;
+      font-weight: 700;
+      color: $color-dark-blue;
+      text-align: center;
+      line-height: 1.1;
+    }
+  }
+
+  &__button {
+    text-align: center;
+  }
+}

@@ -1,0 +1,133 @@
+// ==========================================================================
+// Components / buttons
+// add state is-disabled
+// ==========================================================================
+
+.btn {
+  position: relative;
+  display: inline-block;
+  color: $color-primary;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  font-family: $font-primary;
+  font-weight: 700;
+  letter-spacing: 1px;
+  vertical-align: middle;
+  user-select: none;
+  outline: none !important;
+  overflow: hidden;
+  background-color: transparent;
+  padding-right: 10px;
+
+  @include fluid-type($breakpoint-sm, $breakpoint-lg, $button-font-size-min, $button-font-size-max);
+
+  /*
+  &[class*="--color-dark"] {
+    border: 2px solid $color-primary;
+    background-color: transparent;
+    color: $color-primary;
+
+    @include u-all-state {
+      background-color: $color-primary;
+      color: $color-light-green;
+    }
+  }
+
+  &[class*="--color-light"] {
+    border: 2px solid $color-light-green;
+    background-color: transparent;
+    color: $color-light-green;
+
+    @include u-all-state {
+      background-color: $color-light-green;
+      color: $color-primary;
+    }
+  }
+
+  &[class*="--icon"] {
+    a {
+      display: table;
+
+      span {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+
+        &:not(.icon__wrapper) {
+          text-align: left;
+        }
+      }
+
+      @include u-all-state {
+        opacity: 1;
+
+        .icon__wrapper {
+          background: rgba($color-secondary, 0.4);
+          border-color: transparent;
+        }
+      }
+    }
+  }
+
+  &[class*="--icon-right"] {
+    a {
+      span:not(.icon__wrapper) {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &[class*="--icon-left"] {
+    a {
+      span:not(.icon__wrapper) {
+        padding-left: 10px;
+      }
+    }
+  }
+
+  &[class*="--plain"] {
+    padding: 0.6rem 1.25rem;
+    color: $color-white;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid $color-white;
+    border-radius: 40px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 1.75;
+    font-weight: 400;
+    transition: all $transition-normal ease;
+
+    @include u-all-state {
+      // background-color: $color-white;
+      // color: $color-black;
+      opacity: 1;
+    }
+  }
+
+  &[class*="--disabled"] {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  */
+
+  .--arrow-icon {
+    transition: all $transition-normal ease-in-out;
+    padding-left: rem-calc(6px);
+    height: 13px;
+    width: 96px;
+    transform: translateX(0);
+  }
+
+  @include u-all-state {
+    color: $color-primary;
+
+    .--arrow-icon {
+      transform: translateX(6px);
+    }
+  }
+}

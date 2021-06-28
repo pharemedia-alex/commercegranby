@@ -1,0 +1,144 @@
+// ==========================================================================
+// Components / footer
+//
+// ==========================================================================
+
+.footer {
+  position: relative;
+  background-color: $color-dark-red;
+  color: $color-white;
+  padding-top: 10rem;
+  font-weight: 600;
+  font-size: rem-calc(13px);
+
+  &__element-wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/wave/wave-footer2.png) no-repeat;
+    background-size: contain;
+    background-position-y: top;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &__logo {
+    width: rem-calc(120px);
+    height: auto;
+  }
+
+  a {
+    color: $color-white;
+  }
+
+  h4 {
+    font-size: 14px;
+    line-height: 1.27;
+    margin-bottom: rem-calc(25px);
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .row {
+    flex-basis: 0;
+  }
+
+  &-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__social-links {
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+
+      &:not(:last-child) {
+        padding-right: rem-calc(10px);
+      }
+
+      a {
+        svg {
+          width: 30px;
+          height: 18px;
+        }
+      }
+    }
+  }
+
+  &__download-button {
+    display: flex;
+    align-items: center;
+    font-size: rem-calc(13px);
+    background: transparent;
+    border: 0.1rem solid hsla(0, 0%, 100%, 0.5);
+    padding: rem-calc(13px) rem-calc(25px);
+    border-radius: 0.7rem;
+    letter-spacing: 0.65px;
+    font-weight: 600;
+    max-width: rem-calc(360px);
+    -webkit-transition: all $transition-normal ease-in-out;
+    transition: all $transition-normal ease-in-out;
+
+    [class^=icon] {
+      width: rem-calc(22px);
+      height: rem-calc(30px);
+      margin-right: rem-calc(15px);
+
+      * {
+        fill: currentColor !important;
+      }
+    }
+
+    @include u-all-state() {
+      background: #fff;
+      color: $color-dark-red;
+    }
+  }
+
+  // ------------------- Sub footer ---------------------
+  .sub-footer {
+    text-align: center;
+    color: $color-white;
+    background-color: $color-mid-gray;
+    font-size: rem-calc(14px);
+    font-weight: 500;
+    padding: rem-calc(10px) 0;
+
+    a {
+      font-weight: 400;
+      border-bottom: 0;
+      opacity: 1;
+      text-decoration: none;
+      transition: opacity $transition-slow $ease-out-quart;
+
+      &:not(:first-child) {
+        margin-left: 60px;
+      }
+
+      @include u-all-state {
+        text-decoration: none;
+        opacity: 0.6;
+      }
+    }
+  }
+}

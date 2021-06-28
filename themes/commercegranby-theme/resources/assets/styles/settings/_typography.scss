@@ -1,0 +1,102 @@
+// ==========================================================================
+// Settings / typography
+//
+// fonts integration
+// root properties
+// global font-sizes
+//
+// ==========================================================================
+
+/*
+@include font-face(
+  "Saira Semi Condensed",
+  "Saira-semi-condensed", // file name only - path is managed by $font-path in settings > variables
+  200,
+  normal,
+  ttf woff woff2 otf
+);
+*/
+
+@font-face {
+  font-family: "Granby";
+  src:
+    url("../fonts/granby.woff2") format("woff2"),
+    url("../fonts/granby.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Granby";
+  src:
+    url("../fonts/granby-italic.woff2") format("woff2"),
+    url("../fonts/granby-italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Granby";
+  src:
+    url("../fonts/granby-Bold.woff2") format("woff2"),
+    url("../fonts/granby-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+//Font partially imported with enqueue_style in app/setup.php
+
+$font-primary: "Montserrat", sans-serif;
+$font-secondary: "Granby", "Times New Roman", Times, serif;
+
+// define root properties specific to the project
+$root-font-family: $font-primary;
+$root-line-height: 1.5;
+$root-font-size: 16px;
+
+$body-font-size: 16px;
+$body-font-size-min: 15px;
+$body-font-size-max: 16px;
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$body-line-height: 1.25;
+$body-font-color: $color-black;
+
+// headings
+$font-size-h1: 72px;
+$font-size-h2: 50px;
+$font-size-h3: 40px;
+$font-size-h4: 26px;
+$font-size-h5: 20px;
+$font-size-h6: 20px;
+
+// headings max
+$font-size-h1-max: 72px;
+$font-size-h2-max: 50px;
+$font-size-h3-max: 40px;
+$font-size-h4-max: 26px;
+$font-size-h5-max: 20px;
+$font-size-h6-max: 20px;
+
+// headings min
+$font-size-h1-min: 36px;
+$font-size-h2-min: 34px;
+$font-size-h3-min: 28px;
+$font-size-h4-min: 22px;
+$font-size-h5-min: 18px;
+$font-size-h6-min: 18px;
+
+// menu
+$main-nav-font-size: 14px;
+$main-nav-line-height: 1.28;
+
+$mobile-nav-font-size: 28px;
+$mobile-nav-line-height: 32px;
+
+// links
+$link-color: $color-primary;
+
+// buttons
+$button-font-size-min: 16px;
+$button-font-size-max: 20px;
+$button-line-height: 1.31;

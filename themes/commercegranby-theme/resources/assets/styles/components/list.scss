@@ -1,0 +1,35 @@
+// ==========================================================================
+// Components / tiles
+//
+// ==========================================================================
+
+.document-list {
+  position: relative;
+  display: block;
+
+  &__content-wrapper {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.7rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.48), transparent 60%);
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 1rem;
+    padding: 2rem 3rem;
+    width: 100%;
+  }
+
+  h4 {
+    color: $color-mid-gray;
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    color: $color-white;
+  }
+}

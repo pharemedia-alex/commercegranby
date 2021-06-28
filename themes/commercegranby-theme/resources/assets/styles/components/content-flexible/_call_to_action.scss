@@ -1,0 +1,44 @@
+// ==========================================================================
+// Components / content-flexible / call-to-action
+//
+// ==========================================================================
+
+.cf-cta {
+  position: relative;
+
+  &__text,
+  &__button {
+    margin-top: rem-calc($spacing);
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 0;
+    }
+  }
+
+  .btn {
+    opacity: 1;
+    transition: all $transition-slow $ease-out-quart;
+
+    @include u-hocus {
+      opacity: 0.6;
+      background-color: transparent;
+      color: $color-white;
+    }
+
+    &:active {
+      background-color: $color-white;
+      color: $color-primary;
+      opacity: 1;
+    }
+
+    .icon {
+      margin-left: 8px;
+    }
+  }
+
+  .btn-col {
+    @include media-breakpoint-up(lg) {
+      text-align: right;
+    }
+  }
+}

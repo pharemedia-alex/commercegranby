@@ -1,0 +1,16 @@
+// ==========================================================================
+// settings / spacing
+//
+// define spacing used for margin or padding through the pages/elements
+// used for containers (classes - see objects > container)
+// used for utilities
+// new values could be defined for your needs, based on the logic, 
+// to define: default value in tools
+//
+// ==========================================================================
+
+$spacing: 20px; //default value for .ml, .mr, .pt, etc
+$spacing-small: 40px;
+$spacing-medium: 60px;
+$spacing-large: 80px;
+$spacing-xlarge: 140px;

@@ -1,0 +1,106 @@
+// ==========================================================================
+// Components / page header
+//
+// ==========================================================================
+
+.page-header {
+  position: relative;
+  padding-top: rem-calc(110px);
+  padding-bottom: rem-calc(80px);
+  min-height: 420px;
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    max-height: 560px;
+    height: 38vw;
+  }
+
+  &__bg-img {
+    @include background-image-fit;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+
+    @include fluid-type($breakpoint-sm, $breakpoint-xxl, $font-size-h3-min, $font-size-h3-max);
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    position: relative;
+    z-index: $z-index-over;
+    align-items: flex-start;
+    padding-top: rem-calc(40px);
+
+    @include media-breakpoint-up(md) {
+      padding-top: 0;
+      justify-content: center;
+    }
+
+    .row {
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: 700;
+    }
+
+    &::after {
+      background-image: url(../images/wave/wave-listing.png);
+    }
+  }
+}
+
+.home {
+  .page-header {
+    min-height: 60vw;
+
+    @include media-breakpoint-up(sm) {
+      min-height: 680px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      min-height: 100vh;
+      padding-top: rem-calc(300px);
+      padding-bottom: rem-calc(90px);
+    }
+
+    h1 {
+      padding-bottom: 50px;
+
+      @include media-breakpoint-up(lg) {
+        padding-bottom: 100px;
+      }
+    }
+
+    &__subtitle {
+      padding-bottom: 15px;
+
+      @extend h3;
+    }
+
+    &__content p {
+      @include fluid-type($breakpoint-sm, $breakpoint-xxl, $font-size-h3-min, $font-size-h3-max);
+
+      line-height: 1.25;
+      font-weight: 400;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0.1rem;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/wave/wave1.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position-y: bottom;
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+}
