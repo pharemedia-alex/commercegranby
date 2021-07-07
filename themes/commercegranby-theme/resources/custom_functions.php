@@ -54,6 +54,22 @@ function custom_toolbars( $toolbars )
     'link'
   );
 
+  $toolbars['Basic' ] = array();
+	$toolbars['Basic' ][1] = array(
+    'formatselect',
+    'bold',
+    'italic',
+    'underline',
+    'bullist',
+    'numlist',
+    //'blockquote',
+    'pastetext',
+    'removeformat',
+    'undo',
+    'redo',
+    'link'
+  );
+
 	// Edit the "Full" toolbar and remove 'code'
 	// - delet from array code from http://stackoverflow.com/questions/7225070/php-array-delete-by-value-not-key
 	if( ($key = array_search('code' , $toolbars['Full' ][2])) !== false )
@@ -160,9 +176,9 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 
 //define image sizes
 add_action( 'after_setup_theme', function(){
-add_image_size( 's_team_member', 1250, 830 );
-add_image_size( 'layout_img', 700, 500, array('center', 'top') );
-    //add_image_size( 's_thumbnail', 220, 180, false );
+    //header image - restrictions on upload
+    add_image_size( 'tile', 1000, 700 );
+    add_image_size( 'square', 800, 800 );
 });
 
 // Allow SVG upload in backend
@@ -240,5 +256,31 @@ function language_switcher() {
             }
         }
     }
-echo $items;
+    echo $items;
+}
+
+//@image: image object wp
+//@params: [ classe,  ] //might add size one day or alt
+function responsive_image( $wp_image, $params = array() ){
+    $image = "";
+    if( !empty( $wp_image[ 'sizes' ] ) && !empty( $wp_image[ 'sizes' ][ 'thumb_medium' ] ) ){
+
+        $image_srcset = $wp_image[ 'sizes' ][ 'thumb_largest' ] . ' 1800w,';
+        $image_srcset .= $wp_image[ 'sizes' ][ 'thumb_large' ] . ' 1024w,';
+        $image_srcset .= $wp_image[ 'sizes' ][ 'thumb_medium_large' ] . ' 768w,';
+        $image_srcset .= $wp_image[ 'sizes' ][ 'thumb_medium' ] . ' 480w';
+
+        if( empty( $params[ 'alt' ] ) ){
+            $params[ 'alt' ] = $wp_image[ 'title' ];
+        }
+
+        $params_string = '';
+        foreach( $params as $key => $value ){
+            $params_string .= ' ' . $key . '="' . $value . '"';
+        }
+
+        $image = '<img srcset="'. $image_srcset .'" src="' . $wp_image[ 'sizes' ][ 'thumb_medium' ] . '"'. $params_string .' />';
+    }
+
+    return $image;
 }

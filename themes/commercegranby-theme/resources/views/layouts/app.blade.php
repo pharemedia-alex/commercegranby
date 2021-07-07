@@ -26,15 +26,16 @@
           @include('partials.sidebar')
         </aside>
       @endif
-      
-    @php do_action('get_footer') @endphp
-  
-    @if ($images_module_enable===true)
+
+    @if ($show_images_module===true)
       @include('partials.images_module')    
     @endif
 
+    @include('partials.newsletter')
     @include('partials.footer')
     
+    @php do_action('get_footer') @endphp
+
     <div class="u-hide">
       @include('partials.icons')
     </div>

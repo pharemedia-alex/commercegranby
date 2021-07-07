@@ -8,15 +8,23 @@
     width: 100%;
   }
 
+  input,
   input[type="text"],
   input[type="email"],
   input[type="tel"],
   input[type="number"],
   select {
-    border-radius: 0 !important;
-    width: 100%;
-    background-color: transparent;
+    font-family: "Montserrat", sans-serif;
     color: $color-white;
+    font-weight: 600;
+    background: transparent;
+    border: 1px solid hsla(0, 0%, 100%, 0.5);
+    padding: rem-calc(13px) rem-calc(25px);
+    border-radius: 7px;
+    letter-spacing: 0.5px;
+    min-width: rem-calc(280px);
+    margin-right: rem-calc(20px);
+    font-size: rem-calc(14px);
   }
 
   textarea {
@@ -77,7 +85,7 @@
       top: 60%;
       margin-top: -6px;
       right: -20px;
-      border: 1px solid $color-light-green;
+      border: 1px solid $color-mid-gray;
       border-width: 0 2px 2px 0;
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
@@ -97,10 +105,10 @@
   select:-webkit-autofill,
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
-    -webkit-text-fill-color: $color-light-green !important;
+    -webkit-text-fill-color: $color-mid-gray !important;
     -webkit-box-shadow: 0 0 0 1000px $color-primary inset;
-    color: $color-light-beige;
-    border-bottom: 1px solid $color-light-green;
+    color: $color-mid-gray;
+    border-bottom: 1px solid $color-mid-gray;
   }
 }
 

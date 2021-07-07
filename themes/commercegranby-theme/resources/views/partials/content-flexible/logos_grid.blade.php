@@ -13,7 +13,7 @@
         
         <div class="col-12 col-sm-4 col-lg-3 member">
           <div class="o-wrapper --pb-md">
-              {!! wp_get_attachment_image( $element['logo']['id'], 'layout_img' ) !!}
+              {!! wp_get_attachment_image( $element['logo']['id'], 'tile' ) !!}
           </div>
         </div>
             

@@ -1,0 +1,19 @@
+// ==========================================================================
+// Components / content-flexible / featured_content
+//
+// ==========================================================================
+
+.cf-featured-content {
+  position: relative;
+
+  @include media-breakpoint-up(medium) {
+    .featured-tile:nth-child(2) {
+      margin-top: rem-calc(140px);
+    }
+  }
+
+  &__title,
+  &__content {
+    text-align: center;
+  }
+}

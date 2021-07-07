@@ -3,6 +3,25 @@
     "title": "CPT - collaboration",
     "fields": [
         {
+            "key": "field_60da185659c10",
+            "label": "Titre",
+            "name": "title",
+            "type": "text",
+            "instructions": "Sera affiché sur le site internet",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_60b65783ff41d",
             "label": "Description",
             "name": "description",
@@ -64,5 +83,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1622563022
+    "modified": 1624905885
 }

@@ -8,22 +8,26 @@
   display: block;
 
   &_featured {
-    max-height: 300px;
+    max-height: rem-calc(300px);
   }
 
   a {
     position: relative;
     display: block;
     width: 100%;
-    height: 21.875rem;
-    background: #354c70;
+    height: 32vw;
+    background: $color-secondary;
     overflow: hidden;
-    margin-bottom: 6em;
-    border-radius: 0.7rem;
-    color: $white;
+    margin-bottom: $spacing-small;
+    border-radius: rem-calc(12px);
+    color: $color-white;
     text-decoration: none;
     transform: scale(1);
     transition: all $transition-normal $ease-out-expo;
+
+    @include media-breakpoint-up(medium) {
+      height: rem-calc(350px);
+    }
   }
 
   &__background {
@@ -50,20 +54,101 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-    border-radius: 0.7rem;
+    border-radius: rem-calc(12px);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.48), transparent 60%);
   }
 
   &__content {
     position: absolute;
     bottom: 1rem;
-    padding: 2rem 3rem;
+    padding: rem-calc(30px) rem-calc(20px);
     width: 100%;
   }
 
   h3 {
     color: $color-white;
-    margin-bottom: 2rem;
+    margin-bottom: rem-calc(30px);
+  }
+
+  &__text {
+    color: $color-white;
+  }
+}
+
+.featured-tile,
+.mosaic-tile {
+  position: relative;
+  display: block;
+
+  &_featured {
+    max-height: 300px;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 32vw;
+    background: $color-secondary;
+    overflow: hidden;
+    margin-bottom: $spacing-small;
+    border-radius: rem-calc(12px);
+    color: $color-white;
+    text-decoration: none;
+    transform: scale(1);
+    transition: all $transition-normal $ease-out-expo;
+
+    @include media-breakpoint-up(medium) {
+      height: rem-calc(350px);
+    }
+  }
+
+  &--tall {
+    a {
+      @include media-breakpoint-up(medium) {
+        height: rem-calc(560px);
+      }
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
+  &__content-wrapper {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: rem-calc(12px);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.48), transparent 60%);
+  }
+
+  &__content {
+    position: absolute;
+    bottom: rem-calc(20px);
+    padding: rem-calc(30px) rem-calc(20px);
+    width: 100%;
+  }
+
+  h3 {
+    color: $color-white;
+    text-align: center;
   }
 
   &__text {
@@ -75,10 +160,6 @@
   position: relative;
   display: block;
 
-  &__img {
-    margin-bottom: rem-calc(10px);
-  }
-
   &__content {
     position: relative;
     width: 100%;
@@ -92,19 +173,47 @@
     color: $color-white;
   }
 
+  &__img-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: rem-calc(10px);
+    padding-top: 72%;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: rem-calc(12px);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
   a {
     font-size: rem-calc(13px);
     font-weight: 600;
 
-    .--arrow-icon {
+    [class*="--arrow-icon"] {
       transition: all $transition-normal ease-in-out;
       transform: translateX(0);
+      width: 48px;
     }
 
     @include u-all-state {
       color: $color-primary;
 
-      .--arrow-icon {
+      [class*="--arrow-icon"] {
         transform: translateX(4px);
       }
     }
@@ -115,10 +224,6 @@
   position: relative;
   display: block;
 
-  &__img {
-    margin-bottom: rem-calc(10px);
-  }
-
   &__content {
     position: relative;
     width: 100%;
@@ -132,19 +237,47 @@
     color: $color-white;
   }
 
+  &__img-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 72%;
+    margin-bottom: rem-calc(10px);
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: rem-calc(12px);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
   a {
     font-size: rem-calc(13px);
     font-weight: 600;
 
-    .--arrow-icon {
+    [class*="--arrow-icon"] {
       transition: all $transition-normal ease-in-out;
       transform: translateX(0);
+      width: 48px;
     }
 
     @include u-all-state {
       color: $color-primary;
 
-      .--arrow-icon {
+      [class*="--arrow-icon"] {
         transform: translateX(4px);
       }
     }

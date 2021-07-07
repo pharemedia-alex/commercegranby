@@ -168,3 +168,49 @@ function getTemplateSlug() {
 
   return $template;
 }
+
+function get_clean_formated_date( $post = '' ){
+    $formated_date = [];
+    $formated_date[ 'classes' ] = '';
+    $formated_date[ '+' ] = '';
+    $formated_date[ 'last_line' ] = '';
+
+    $from_date = get_field( 'from_date', $post );
+    $end_date = get_field( 'end_date', $post );
+    if( !empty( $from_date ) || !empty( $end_date ) ){
+        if( ICL_LANGUAGE_CODE == 'fr' ){
+            setlocale(LC_TIME, 'fr_FR.UTF-8');
+        }
+        $from_str_month = strftime( '%B', strtotime( $from_date ) );
+        $from_str_date = strftime( '%e', strtotime( $from_date ) );
+
+        if( empty( $end_date ) ){
+            $formated_date[ 'first_line' ] = $from_str_date;
+            $formated_date[ 'last_line' ] = $from_str_month;
+            $formated_date[ 'one_line' ] = $from_str_date . ' ' . $from_str_month;
+        } else {
+            $end_str_date = strftime( '%e', strtotime( $end_date ) );
+            $end_str_month = strftime( '%B', strtotime( $end_date ) );
+
+            if( $from_str_month != $end_str_month ){
+                $formated_date[ 'classes' ] = 'smaller';
+                $formated_date[ 'first_line' ] = $from_str_date .' '. $from_str_month;
+                $formated_date[ 'last_line' ] = $end_str_date . ' ' . $end_str_month;
+                $formated_date[ 'one_line' ] = $from_str_date . ' ' . $from_str_month . ' ' . t( 'common.to') . ' ' . $end_str_date . ' ' . $end_str_month;
+            } else {
+                $formated_date[ 'classes' ] = 'smaller';
+                $formated_date[ 'first_line' ] = $from_str_date . '-' . $end_str_date;
+                $formated_date[ 'last_line' ] = $from_str_month;
+                $formated_date[ 'one_line' ] = $from_str_date . ' ' . t( 'common.to') . ' ' . $end_str_date . ' ' . $from_str_month;
+            }
+        }
+    }
+
+    $date_recursive = get_field( 'date_recursive', $post );
+    if( !empty( $date_recursive ) ){
+        $formated_date[ 'first_line' ] = $date_recursive;
+        $formated_date[ 'classes' ] = 'smallest';
+    }
+
+    return $formated_date;
+}

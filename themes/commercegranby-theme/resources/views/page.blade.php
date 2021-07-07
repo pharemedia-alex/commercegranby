@@ -5,10 +5,6 @@
 
     @include('partials.page-header')
     @include('partials.content-flexible')
-    
-    @if ( $show_images_module===true )
-      @include('partials.images_module')
-    @endif
 
   @endwhile
 @endsection

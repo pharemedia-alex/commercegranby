@@ -1,0 +1,18 @@
+// ==========================================================================
+// Components / content-flexible / featured_content
+//
+// ==========================================================================
+
+.cf-mosaic {
+  position: relative;
+
+  @include media-breakpoint-up(medium) {
+    .mosaic-tile:nth-child(2) {
+      margin-top: -140px;
+    }
+  }
+
+  .mosaic-tile:nth-child(3) {
+    margin-top: 70px;
+  }
+}

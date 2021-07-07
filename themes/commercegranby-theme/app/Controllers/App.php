@@ -45,9 +45,12 @@ class App extends Controller
         );
     }
 
-    public static function get_images() {
-        $images_module = get_field('images_modules', 'option');
+    public function show_images_module() {
+        return get_field('images_module_enable');
+    }
 
+    public static function get_images() {
+        $images_module = get_field('images_module', 'option');
         return (object) $images_module;
     }
 
@@ -80,13 +83,14 @@ class App extends Controller
 
             foreach( $menu_items as $menu_item ) {
                     $link = $menu_item->url;
+                    $target = $menu_item->target;
                     $title = $menu_item->title;
                     $menu_item->ID==$cai ? $ac2=' current_menu' : $ac2='';
                     if ( !$menu_item->menu_item_parent ) {
                         $menu_classes = ( !empty($menu_item->classes) ) ? implode( " ", $menu_item->classes ) : '';
                             $parent_id = $menu_item->ID;$parent_id==$cpi ? $ac=' current-menu-item' : $ac='';
                             if(!empty($menu_items[$count + 1]) && $menu_items[ $count + 1 ]->menu_item_parent == $parent_id ){//Checking has child
-                                    $menu_list .= '<li class="menu-item dropdown has_child'.$ac.' '.$menu_classes.'" data-dropdown="sub-menu-'.$menu_item->ID.'"><a href="'.$link.'" class="'.$ac2.'" role="button">'.$title.'</a>';
+                                    $menu_list .= '<li class="menu-item dropdown has_child'.$ac.' '.$menu_classes.'" data-dropdown="sub-menu-'.$menu_item->ID.'"><a href="'.$link.'" class="'.$ac2.'" role="button" target="'.$target.'">'.$title.'</a>';
                             }else{
                                     $menu_list .= '<li class="menu-item '.$ac.' '.$menu_classes.'">' ."\n";$menu_list .= '<a href="'.$link.'" class="'.$ac2.'">'.$title.'</a>' ."\n";
                             }
@@ -98,7 +102,7 @@ class App extends Controller
                                     $submenu_list .= '<div class="sub-menu sub-menu-' . $parent_id . '"><ul>' ."\n";
                             }
                             $submenu_list .= '<li id="'.$menu_item->ID.'">' ."\n";
-                            $submenu_list .= '<a href="'.$link.'" class="sub-menu-item '.$ac2.'"><h4>'.$title.'</h4></a>';
+                            $submenu_list .= '<a href="'.$link.'" class="sub-menu-item '.$ac2.'" target="'.$target.'"><h4>'.$title.'</h4></a>';
                             $submenu_list .= '</li>' ."\n";
                             if(empty($menu_items[$count + 1]) || $menu_items[ $count + 1 ]->menu_item_parent != $parent_id && $submenu){
                                 $submenu_list .= '</ul></div>' ."\n";

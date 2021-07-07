@@ -85,6 +85,14 @@ body {
 .main {
   position: relative;
   min-height: 100%;
+
+  > :last-child {
+    padding-bottom: rem-calc($spacing-xlarge / 2);
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem-calc($spacing-xlarge);
+    }
+  }
 }
 
 .prevent-scroll {

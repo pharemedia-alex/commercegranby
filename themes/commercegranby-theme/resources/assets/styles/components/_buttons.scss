@@ -115,7 +115,7 @@
   }
   */
 
-  .--arrow-icon {
+  [class*="--arrow-icon"] {
     transition: all $transition-normal ease-in-out;
     padding-left: rem-calc(6px);
     height: 13px;
@@ -126,7 +126,7 @@
   @include u-all-state {
     color: $color-primary;
 
-    .--arrow-icon {
+    [class*="--arrow-icon"] {
       transform: translateX(6px);
     }
   }

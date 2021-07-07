@@ -5,32 +5,22 @@
 @if ( !empty($images) )
 
     <section class="images-module">
-    <div class="o-container --pt-xl -t-animate">
+        @php $images_module_title = get_field('images_module_title', 'option'); @endphp
+        @if ( !empty($images_module_title) )
+            <div class="o-container --pb-lg">
+                <h4 class="images-module__title h2">{!! $images_module_title !!}</h4>
+            </div>
+        @endif
 
-        <div class="wave-sep"></div>
-        
-        <div class="m-instagram">
-            <div class="container">
-                <h2 class="m-instagram__title"></h2>
-            </div>
-    
-            <div class="m-instagram__bubbles-container">
-                @foreach ( $images as $el )
-                    @dump($el);
-                            @php 
-                            //$instagram_url_image = get_field( 'instagram_url_image', $instagram_post );
-                            @endphp
-                            {{-- Save the image on our server 
-                            <img src="{{ ImagesManager::fit( $instagram_url_image, 450, 450 )  }}" alt="image instagram ID: {{ get_field( 'instagram_id', $instagram_post ) }}">--}}
-                        </div>
-                    
-                @endforeach
-            </div>
+        <div class="images-module__bubbles-wrapper">
+            @foreach ( $images as $el )
+                @if ( !empty($el['image_file']['url']) )
+                    <div class="images-module__bubble">
+                        <img src="{!! $el['image_file']['url'] !!}" alt="{!! $el['image_title'] !!}">
+                    </div>
+                @endif
+            @endforeach
         </div>
-        
-
-    </div>
-    
     </section>
 
 @endif

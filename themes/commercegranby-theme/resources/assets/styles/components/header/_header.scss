@@ -123,6 +123,22 @@
       }
     }
 
+    .social-links {
+      width: rem-calc(120px);
+      text-align: right;
+
+      li {
+        display: inline-block;
+
+        a {
+          svg {
+            width: 30px;
+            height: 18px;
+          }
+        }
+      }
+    }
+
     .nav-primary > ul > li {
       &::after {
         border-bottom-color: $color-white;

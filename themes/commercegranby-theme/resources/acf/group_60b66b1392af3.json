@@ -3,6 +3,25 @@
     "title": "CPT - événement",
     "fields": [
         {
+            "key": "field_60da340615dd1",
+            "label": "Titre",
+            "name": "title",
+            "type": "text",
+            "instructions": "Sera affiché sur le site internet",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_60b66b27d83c5",
             "label": "Date de début",
             "name": "start_date",
@@ -24,7 +43,7 @@
             "label": "Date de fin",
             "name": "end_date",
             "type": "date_time_picker",
-            "instructions": "",
+            "instructions": "Ne pas renseigner si l'événement dure une journée",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -117,5 +136,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1623171504
+    "modified": 1625084784
 }

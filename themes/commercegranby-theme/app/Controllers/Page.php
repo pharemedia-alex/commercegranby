@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use Sober\Controller\Controller;
+use DateTime;
+use WP_Query;
 
 class Page extends Controller
 {
@@ -15,14 +17,10 @@ class Page extends Controller
     $this->acf_fields = (object) get_fields();
   }
 
-  public function show_images_module() {
-    return $this->acf_fields->images_module_enable;
-  }
-
   /* used by partials - flexible content */
   public static function events_list() {
 
-    $date = new DateTime();
+    $date = new \DateTime();
     $today = $date->getTimestamp();
 
     $query_events = new WP_Query(
@@ -44,7 +42,22 @@ class Page extends Controller
       )
     );
 
-    return $query_events;
+    return $query_events->posts;
+
+  }
+
+  public static function get_featured_content( $content_id ) {
+
+    if ( !empty($content_id) ) {
+      $output = (object) array(
+        'link'      => get_field('link', $content_id),
+        'title'     => get_field('title', $content_id)
+      );
+    }else {
+      $output = false;
+    }
+
+    return $output;
 
   }
 

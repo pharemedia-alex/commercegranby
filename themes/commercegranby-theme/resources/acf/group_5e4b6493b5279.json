@@ -224,7 +224,7 @@
                             },
                             "default_value": "",
                             "tabs": "visual",
-                            "toolbar": "very_basic",
+                            "toolbar": "basic",
                             "media_upload": 1,
                             "delay": 0
                         },
@@ -479,7 +479,7 @@
                                     "name": "title",
                                     "type": "text",
                                     "instructions": "",
-                                    "required": 1,
+                                    "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "",
@@ -507,7 +507,7 @@
                                     },
                                     "default_value": "",
                                     "tabs": "visual",
-                                    "toolbar": "very_basic",
+                                    "toolbar": "basic",
                                     "media_upload": 0,
                                     "delay": 0
                                 },
@@ -536,7 +536,7 @@
                                     "name": "button",
                                     "type": "group",
                                     "instructions": "",
-                                    "required": 1,
+                                    "required": 0,
                                     "conditional_logic": [
                                         [
                                             {
@@ -743,8 +743,8 @@
                         },
                         {
                             "key": "field_60b67b593f890",
-                            "label": "Éléments",
-                            "name": "content",
+                            "label": "Collaborations",
+                            "name": "collaboration_elements",
                             "type": "repeater",
                             "instructions": "",
                             "required": 1,
@@ -754,6 +754,11 @@
                                         "field": "field_60b67ab73f88f",
                                         "operator": "==",
                                         "value": "manual"
+                                    },
+                                    {
+                                        "field": "field_60ce3a6fbf0e3",
+                                        "operator": "==",
+                                        "value": "collaboration"
                                     }
                                 ]
                             ],
@@ -771,7 +776,7 @@
                                 {
                                     "key": "field_60b67bcc3f891",
                                     "label": "Collaboration",
-                                    "name": "collaboration",
+                                    "name": "id",
                                     "type": "post_object",
                                     "instructions": "",
                                     "required": 1,
@@ -795,13 +800,47 @@
                                     "taxonomy": "",
                                     "allow_null": 0,
                                     "multiple": 0,
-                                    "return_format": "object",
+                                    "return_format": "id",
                                     "ui": 1
-                                },
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_60da1c37f6b38",
+                            "label": "Documents",
+                            "name": "document_elements",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_60b67ab73f88f",
+                                        "operator": "==",
+                                        "value": "manual"
+                                    },
+                                    {
+                                        "field": "field_60ce3a6fbf0e3",
+                                        "operator": "==",
+                                        "value": "document"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
                                 {
-                                    "key": "field_60d0d83110a11",
+                                    "key": "field_60da1c37f6b3a",
                                     "label": "Document",
-                                    "name": "document",
+                                    "name": "id",
                                     "type": "post_object",
                                     "instructions": "",
                                     "required": 1,
@@ -825,13 +864,47 @@
                                     "taxonomy": "",
                                     "allow_null": 0,
                                     "multiple": 0,
-                                    "return_format": "object",
+                                    "return_format": "id",
                                     "ui": 1
-                                },
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_60da1c38f6b3c",
+                            "label": "Articles",
+                            "name": "article_elements",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_60b67ab73f88f",
+                                        "operator": "==",
+                                        "value": "manual"
+                                    },
+                                    {
+                                        "field": "field_60ce3a6fbf0e3",
+                                        "operator": "==",
+                                        "value": "press"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
                                 {
-                                    "key": "field_60d0ea97b3e4b",
+                                    "key": "field_60da1c38f6b3f",
                                     "label": "Article",
-                                    "name": "press",
+                                    "name": "id",
                                     "type": "post_object",
                                     "instructions": "",
                                     "required": 1,
@@ -840,7 +913,7 @@
                                             {
                                                 "field": "field_60ce3a6fbf0e3",
                                                 "operator": "==",
-                                                "value": "collaboration"
+                                                "value": "press"
                                             }
                                         ]
                                     ],
@@ -855,7 +928,244 @@
                                     "taxonomy": "",
                                     "allow_null": 0,
                                     "multiple": 0,
-                                    "return_format": "object",
+                                    "return_format": "id",
+                                    "ui": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60da9a7c14e16": {
+                    "key": "layout_60da9a7c14e16",
+                    "name": "featured_content",
+                    "label": "À la une",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60da9a7c14e17",
+                            "label": "Section ID",
+                            "name": "section_id",
+                            "type": "text",
+                            "instructions": "This feature could be use to add direct link to the section. You need to define the section ID (without any space or special characters, must be unique on a page), then you could create a direct link to this section with : \/url-of-the-page#section-id",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_60da9a7c14e18",
+                            "label": "Titre",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_60da9a7c14e1a",
+                            "label": "Texte",
+                            "name": "text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "visual",
+                            "toolbar": "very_basic",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_60da9a7c14e1d",
+                            "label": "Elements",
+                            "name": "elements",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 3,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_60da9a7c14e1e",
+                                    "label": "Élément",
+                                    "name": "element",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5e4b64c9dbeb4",
+                                                "operator": "!=empty"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "collaboration",
+                                        "press"
+                                    ],
+                                    "taxonomy": "",
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "return_format": "id",
+                                    "ui": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60db2db4c425e": {
+                    "key": "layout_60db2db4c425e",
+                    "name": "mosaic_content",
+                    "label": "Mosaïque",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_60db2db4c425f",
+                            "label": "Section ID",
+                            "name": "section_id",
+                            "type": "text",
+                            "instructions": "This feature could be use to add direct link to the section. You need to define the section ID (without any space or special characters, must be unique on a page), then you could create a direct link to this section with : \/url-of-the-page#section-id",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_60db2db4c4260",
+                            "label": "Titre",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_60db2db4c4261",
+                            "label": "Texte",
+                            "name": "text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "visual",
+                            "toolbar": "very_basic",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_60db2db4c4262",
+                            "label": "Elements",
+                            "name": "elements",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 3,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_60db2db4c4263",
+                                    "label": "Élément",
+                                    "name": "id",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5e4b64c9dbeb4",
+                                                "operator": "!=empty"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "collaboration",
+                                        "press",
+                                        "document"
+                                    ],
+                                    "taxonomy": "",
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "return_format": "id",
                                     "ui": 1
                                 }
                             ]
@@ -1048,7 +1358,7 @@
                         },
                         {
                             "key": "field_5e4b6b1f54d22",
-                            "label": "Text",
+                            "label": "Texte",
                             "name": "text",
                             "type": "wysiwyg",
                             "instructions": "Use <em> <\/em> tags to highlight content in the text",
@@ -1273,7 +1583,7 @@
                             "key": "field_60b68bd712cd8",
                             "label": "Texte",
                             "name": "text",
-                            "type": "text",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1283,10 +1593,10 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "tabs": "all",
+                            "toolbar": "very_basic",
+                            "media_upload": 1,
+                            "delay": 0
                         }
                     ],
                     "min": "",
@@ -1325,5 +1635,5 @@
     ],
     "active": 1,
     "description": "Content blocks for flexible layout shared by all templates",
-    "modified": 1624307497
+    "modified": 1625085246
 }

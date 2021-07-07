@@ -67,6 +67,13 @@ export default {
       this.toggle = new Accordion('#cf-faq-accordion', 'toggle-trigger', true);
     }
 
+    console.log('body' + document.body.classList.contains('home'));
+    console.log('mosaic' + document.querySelector('cf-mosaic');
+
+    if ( document.querySelector('cf-mosaic')!==null && document.body.classList.contains('home')) {
+      console.log(document.querySelector('cf-mosaic').index);
+    }
+
     /*
     //Find the largest of the divs
     function getHighest(heights) {
