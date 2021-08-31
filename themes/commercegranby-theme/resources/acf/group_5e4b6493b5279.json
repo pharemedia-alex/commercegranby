@@ -158,6 +158,25 @@
                                     "prepend": "",
                                     "append": "",
                                     "maxlength": ""
+                                },
+                                {
+                                    "key": "field_6127eeb0f8cf4",
+                                    "label": "ouvrir dans un nouvel onglet",
+                                    "name": "target",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
                                 }
                             ]
                         }
@@ -379,6 +398,25 @@
                                     "prepend": "",
                                     "append": "",
                                     "maxlength": ""
+                                },
+                                {
+                                    "key": "field_6127ed75e7723",
+                                    "label": "ouvrir dans un nouvel onglet",
+                                    "name": "target",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
                                 }
                             ]
                         }
@@ -590,6 +628,25 @@
                                             "prepend": "",
                                             "append": "",
                                             "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_6127eeccf8cf5",
+                                            "label": "ouvrir dans un nouvel onglet",
+                                            "name": "target",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 0,
+                                            "ui": 0,
+                                            "ui_on_text": "",
+                                            "ui_off_text": ""
                                         }
                                     ]
                                 }
@@ -1454,6 +1511,25 @@
                                     "prepend": "",
                                     "append": "",
                                     "maxlength": ""
+                                },
+                                {
+                                    "key": "field_6127ef23f8cf6",
+                                    "label": "ouvrir dans un nouvel onglet",
+                                    "name": "target",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
                                 }
                             ]
                         }
@@ -1553,54 +1629,6 @@
                     ],
                     "min": "",
                     "max": "1"
-                },
-                "layout_60b68bd712cd6": {
-                    "key": "layout_60b68bd712cd6",
-                    "name": "events_list",
-                    "label": "Liste des événements",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_60b68bd712cd7",
-                            "label": "Title",
-                            "name": "title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_60b68bd712cd8",
-                            "label": "Texte",
-                            "name": "text",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "very_basic",
-                            "media_upload": 1,
-                            "delay": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
             },
             "button_label": "Add Block",
@@ -1635,5 +1663,5 @@
     ],
     "active": 1,
     "description": "Content blocks for flexible layout shared by all templates",
-    "modified": 1625085246
+    "modified": 1630007120
 }

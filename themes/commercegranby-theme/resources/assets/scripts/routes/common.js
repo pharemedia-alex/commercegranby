@@ -67,11 +67,14 @@ export default {
       this.toggle = new Accordion('#cf-faq-accordion', 'toggle-trigger', true);
     }
 
-    console.log('body' + document.body.classList.contains('home'));
-    console.log('mosaic' + document.querySelector('cf-mosaic');
-
-    if ( document.querySelector('cf-mosaic')!==null && document.body.classList.contains('home')) {
-      console.log(document.querySelector('cf-mosaic').index);
+    if ( document.querySelector('.cf-mosaic')!==null && document.body.classList.contains('home')) {
+      var elMosaic = document.querySelector('.cf-mosaic');
+      var elMain = Array.prototype.slice.call( document.querySelector('.main').children );
+      var index = elMain.indexOf(elMosaic);
+      
+      if (index==1) {
+        elMosaic.classList.add('first-el');
+      }
     }
 
     /*

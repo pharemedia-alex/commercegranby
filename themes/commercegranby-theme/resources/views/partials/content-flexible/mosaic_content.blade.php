@@ -3,7 +3,7 @@
   <div class="o-container --pt-xl -t-animate">
 
     <div class="row">
-      <div class="col-12 col-lg-4 cf-mosaic__top-intro">
+      <div class="col-12 col-sm-6 col-lg-4 cf-mosaic__top-intro">
         <div class="o-wrapper --pb-md">
           <h2 class="cf-mosaic__title">{!! $content_block->title !!}</h2>
           <div class="cf-mosaic__text">{!! $content_block->text !!}</div>
@@ -11,11 +11,11 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row -t-animate">
 
       @foreach( $content_block->elements as $key => $element )
 
-        <div class="col-12 col-md-6 col-lg-4 mosaic-tile">
+        <div class="col-12 col-sm-6 col-lg-4 mosaic-tile">
           @php
             $el_id = $element['id'];
             $el_post_type = get_post_type($el_id);

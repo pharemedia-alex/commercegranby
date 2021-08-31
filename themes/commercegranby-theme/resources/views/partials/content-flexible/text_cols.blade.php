@@ -11,20 +11,18 @@
       @endif
     </div>
 
-    <div class="row -t-animate">
+    <div class="row cf-text-cols__elements">
       @foreach ($content_block->columns as $column )
-        <div class="col-sm u-pb-md">
-          <div class="o-wrapper --pb-sm">
+        <div class="col-12 col-sm-6 -t-animate">
 
-            @if ( !empty($column['image']) )
-              <div class="o-wrapper --pb-sm cf-text-cols__img">
-                {!! wp_get_attachment_image( $column['image']['id'], 'layout_img' ) !!}
-              </div>
-            @endif
+          @if ( !empty($column['image']) )
+            <div class="o-wrapper --pb-sm cf-text-cols__img">
+              {!! wp_get_attachment_image( $column['image']['id'], 'layout_img' ) !!}
+            </div>
+          @endif
 
-            <h2 class="cf-text-cols__title h3 u-pb">{!! $column['title'] !!}</h2>
-            <div class="cf-text-cols__text o-content">{!! $column['content'] !!}</div>
-          </div>
+          <h2 class="cf-text-cols__title h3 u-pb">{!! $column['title'] !!}</h2>
+          <div class="cf-text-cols__text o-content">{!! $column['content'] !!}</div>
 
           @if( $column['add_button']===true )
             @php
@@ -34,10 +32,11 @@
               );
             @endphp
 
-            <div class="cf-text-cols__button">
+            <div class="cf-text-cols__button u-pt-sm">
               @include('partials.content-flexible.button', $button_params)
             </div>
           @endif
+
         </div>
       @endforeach
     </div>

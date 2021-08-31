@@ -1,8 +1,8 @@
 <section {!! (!empty($content_block->section_id)) ? 'id="'.$content_block->section_id.'"' : '' !!} class="cf-content-list">
-  <div class="o-container --pt-xl -t-animate">
-    <div class="row">
+  <div class="o-container --pt-xl">
+    <div class="row -t-animate">
       <div class="col-12">
-        <div class="o-wrapper --pb-sm">
+        <div class="o-wrapper">
           <h2 class="cf-content-list">{!! $content_block->title !!}</h2>
           @if ( !empty($content_block->text) )
             <div class="o-content">
@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row -t-animate">
       @if ( $content_block->display_type == 'auto')
         
         @php
@@ -58,23 +58,25 @@
               @endphp
 
               <div class="col-12 col-sm-6">
-                <div class="collaboration-tile">
-                  <a href="{!! $collaboration_link !!}" title="{!! $collaboration_title !!}" target="_blank" class="">
-                    @if( has_post_thumbnail($collaboration_id) )
-                      <div class="collaboration-tile__background">
-                        {!! get_the_post_thumbnail( $collaboration_id, 'tile', array( 'class' => 'alignleft' ) ) !!}
-                      </div>
-                    @endif
+                <div class="o-wrapper --pt-md">
+                  <div class="collaboration-tile">
+                    <a href="{!! $collaboration_link !!}" title="{!! $collaboration_title !!}" target="_blank" class="">
+                      @if( has_post_thumbnail($collaboration_id) )
+                        <div class="collaboration-tile__background">
+                          {!! get_the_post_thumbnail( $collaboration_id, 'tile', array( 'class' => 'alignleft' ) ) !!}
+                        </div>
+                      @endif
 
-                    <div class="collaboration-tile__content-wrapper">
-                      <div class="collaboration-tile__content">
-                        <h3 class="collaboration-tile__title h4">{!! $collaboration_title !!}</h3>
-                        @if( !empty($collaboration_description) )
-                          <div class="collaboration-tile__text o-content">{!! $collaboration_description !!}</div>
-                        @endif
+                      <div class="collaboration-tile__content-wrapper">
+                        <div class="collaboration-tile__content">
+                          <h3 class="collaboration-tile__title h4">{!! $collaboration_title !!}</h3>
+                          @if( !empty($collaboration_description) )
+                            <div class="collaboration-tile__text o-content">{!! $collaboration_description !!}</div>
+                          @endif
+                        </div>
                       </div>
-                    </div>
-                  </a>
+                    </a>
+                  </div>
                 </div>
               </div>
               
@@ -89,22 +91,24 @@
               @endphp
 
               <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="document-tile">
-                  @if( has_post_thumbnail($document_id) )
-                    <div class="document-tile__img-wrapper">
-                      <div class="document-tile__img">
-                        {!! get_the_post_thumbnail( $document_id, 'tile', array( 'class' => 'alignleft' ) ) !!}
+                <div class="o-wrapper --pt-md">
+                  <div class="document-tile">
+                    @if( has_post_thumbnail($document_id) )
+                      <div class="document-tile__img-wrapper">
+                        <div class="document-tile__img">
+                          {!! get_the_post_thumbnail( $document_id, 'tile', array( 'class' => 'alignleft' ) ) !!}
+                        </div>
                       </div>
-                    </div>
-                  @endif
+                    @endif
 
-                  <div class="document-tile__content-wrapper">
-                    <div class="document-tile__content">
-                      <h3 class="document-tile__title h5">{!! $document_name !!}</h3>
-                      <a href="{!! $document_file !!}" title="{!! $document_name !!}" target="_blank" class="document-tile__link">
-                        {!! __('Télécharger', 'commercegranby-theme') !!}
-                        @icon('long-right-arrow','--arrow-icon')
-                      </a>
+                    <div class="document-tile__content-wrapper">
+                      <div class="document-tile__content">
+                        <h3 class="document-tile__title h5">{!! $document_name !!}</h3>
+                        <a href="{!! $document_file !!}" title="{!! $document_name !!}" target="_blank" class="document-tile__link">
+                          {!! __('Télécharger', 'commercegranby-theme') !!}
+                          @icon('long-right-arrow','--arrow-icon')
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -122,22 +126,24 @@
               @endphp
 
               <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="article-tile">
-                  @if(has_post_thumbnail( $article_id ))
-                    <div class="article-tile__img-wrapper">
-                      <div class="article-tile__img">
-                        {!! get_the_post_thumbnail( $article_id, 'tile', array( 'class' => 'alignleft' ) ) !!}
+                <div class="o-wrapper --pt-md">
+                  <div class="article-tile">
+                    @if(has_post_thumbnail( $article_id ))
+                      <div class="article-tile__img-wrapper">
+                        <div class="article-tile__img">
+                          {!! get_the_post_thumbnail( $article_id, 'tile', array( 'class' => 'alignleft' ) ) !!}
+                        </div>
                       </div>
-                    </div>
-                  @endif
+                    @endif
 
-                  <div class="article-tile__content-wrapper">
-                    <div class="article-tile__content">
-                      <h3 class="article-tile__title h5">{!! $article_title !!}</h3>
-                      <a href="{!! $article_link !!}" title="{!! $article_title !!}" target="_blank" class="article-tile__link">
-                        {!! __('Consulter', 'commercegranby-theme') !!}
-                        @icon('long-right-arrow','--arrow-icon')
-                      </a>
+                    <div class="article-tile__content-wrapper">
+                      <div class="article-tile__content">
+                        <h3 class="article-tile__title h5">{!! $article_title !!}</h3>
+                        <a href="{!! $article_link !!}" title="{!! $article_title !!}" target="_blank" class="article-tile__link">
+                          {!! __('Consulter', 'commercegranby-theme') !!}
+                          @icon('long-right-arrow','--arrow-icon')
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

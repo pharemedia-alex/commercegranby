@@ -9,13 +9,23 @@
   .col-12 {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   &__img {
     img {
       border-radius: 0.7rem;
       overflow: hidden;
+    }
+  }
+
+  &__elements {
+    > div:not(:last-child) {
+      margin-bottom: 60px;
+
+      @include media-breakpoint-up(sm) {
+        margin-bottom: 0;
+      }
     }
   }
 }

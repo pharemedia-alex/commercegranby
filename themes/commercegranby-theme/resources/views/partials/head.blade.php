@@ -1,6 +1,5 @@
 <head>
-  <!-- Add Google Tag Manager here -->
-
+  
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,16 +14,8 @@
   <meta name="msapplication-config" content="@asset('images/favicon/browserconfig.xml')">
   <meta name="theme-color" content="#ffffff">
   
+  <?php echo get_field('tracking_code_header', 'option'); ?>
+
   @php wp_head() @endphp
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-183382904-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-183382904-1');
-  </script>
 
 </head>

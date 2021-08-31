@@ -39,8 +39,32 @@
   input[type="tel"],
   input[type="number"],
   select {
+    font-family: "Montserrat", sans-serif;
     color: $color-white;
+    font-weight: 600;
+    background: transparent;
+    border: 1px solid hsla(0, 0%, 100%, 0.5);
+    padding: rem-calc(13px) rem-calc(25px);
+    border-radius: 7px;
+    letter-spacing: 0.5px;
+    min-width: rem-calc(280px);
+    font-size: rem-calc(14px);
     outline: 0;
+    width: 100%;
+    margin-top: 10px;
+
+    @include media-breakpoint-only( sm ) {
+      min-width: rem-calc(140px);
+      width: calc(50% - 30px);
+      margin-right: rem-calc(20px);
+      margin-top: 0;
+    }
+
+    @include media-breakpoint-up( md ) {
+      width: auto;
+      margin-right: rem-calc(20px);
+      margin-top: 0;
+    }
 
     &:focus {
       border: 1px solid hsla(0, 0%, 100%, 0.5);
@@ -75,10 +99,12 @@
     width: auto;
     position: relative;
     cursor: pointer;
+    color: $color-white;
 
     input {
       min-width: rem-calc(200px);
       cursor: pointer;
+      margin-top: 0;
     }
 
     &::after {
@@ -89,14 +115,14 @@
       transform: translateY(-50%);
       width: rem-calc(28px);
       height: rem-calc(10px);
-      background-color: $white;
+      background-color: $color-white;
       mask-image: url("../images/small-right-arrow.svg");
-      transition: right $transition-fast ease-in-out;
+      transition: right $transition-normal ease-in-out;
     }
 
     &:hover {
       &::after {
-        right: -2px;
+        right: -10px;
       }
     }
   }
@@ -181,13 +207,13 @@
     }
   }
 
-  @include media-breakpoint-up( medium ) {
+  @include media-breakpoint-up( md ) {
     .yikes-mailchimp-container {
       text-align: center;
     }
   }
 
-  @include media-breakpoint-up( small ) {
+  @include media-breakpoint-up( sm ) {
     .yikes-mailchimp-container {
       text-align: center;
 

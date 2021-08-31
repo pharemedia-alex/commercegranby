@@ -5,7 +5,7 @@
   
   <body @php body_class( $header->theme ) @endphp>
 
-    <!-- Add Google Tag Manager here -->
+    <?php echo get_field('tracking_code_begin_body', 'option'); ?>
 
     @include('partials.page-transition')
     
@@ -41,6 +41,8 @@
     </div>
     
     @php wp_footer() @endphp
+
+    <?php echo get_field('tracking_code_end_body', 'option'); ?>
   
   </body>
 </html>

@@ -15,7 +15,8 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 32vw;
+    height: rem-calc(200px);
+    min-height: 73vw;
     background: $color-secondary;
     overflow: hidden;
     margin-bottom: $spacing-small;
@@ -23,10 +24,24 @@
     color: $color-white;
     text-decoration: none;
     transform: scale(1);
-    transition: all $transition-normal $ease-out-expo;
+    transition: all $transition-normal ease;
+    box-shadow: none;
 
-    @include media-breakpoint-up(medium) {
-      height: rem-calc(350px);
+    @include media-breakpoint-up(sm) {
+      min-height: 55vw;
+    }
+
+    @include media-breakpoint-up(md) {
+      min-height: 42vw;
+    }
+
+    @include media-breakpoint-up(lg) {
+      min-height: rem-calc(350px);
+    }
+
+    @include u-all-state {
+      transform: scale(1.02);
+      box-shadow: 3px 3px 15px rgba(133, 133, 133, 0.3);
     }
   }
 
@@ -61,7 +76,7 @@
   &__content {
     position: absolute;
     bottom: 1rem;
-    padding: rem-calc(30px) rem-calc(20px);
+    padding: rem-calc(30px);
     width: 100%;
   }
 
@@ -88,7 +103,7 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 32vw;
+    height: 73vw;
     background: $color-secondary;
     overflow: hidden;
     margin-bottom: $spacing-small;
@@ -96,16 +111,30 @@
     color: $color-white;
     text-decoration: none;
     transform: scale(1);
-    transition: all $transition-normal $ease-out-expo;
+    transition: all $transition-slow ease;
+    box-shadow: none;
 
-    @include media-breakpoint-up(medium) {
+    @include media-breakpoint-up(sm) {
+      height: 48vw;
+    }
+
+    @include media-breakpoint-up(md) {
+      height: 36vw;
+    }
+
+    @include media-breakpoint-up(lg) {
       height: rem-calc(350px);
+    }
+
+    @include u-all-state {
+      transform: scale(1.02);
+      box-shadow: 3px 3px 15px rgba(133, 133, 133, 0.5);
     }
   }
 
   &--tall {
     a {
-      @include media-breakpoint-up(medium) {
+      @include media-breakpoint-up(lg) {
         height: rem-calc(560px);
       }
     }
@@ -153,6 +182,18 @@
 
   &__text {
     color: $color-white;
+  }
+}
+
+.featured-tile {
+  &:last-child {
+    @include media-breakpoint-up(md) {
+      margin-top: -120px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 0;
+    }
   }
 }
 

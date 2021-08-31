@@ -3,34 +3,8 @@
 // ==========================================================================
 
 .template-contact {
-  background-color: $color-primary;
-
-  .page-header {
-    padding-top: rem-calc(220px);
-    height: auto;
-    max-height: none;
-
-    &__bg-img {
-      img,
-      picture {
-        object-fit: cover;
-        object-position: top;
-      }
-
-      @include media-breakpoint-up(md) {
-        img,
-        picture {
-          object-fit: contain;
-          object-position: bottom;
-        }
-      }
-    }
-  }
-
   // ------------------- Form ---------------------
   .contact-form {
-    color: $color-mid-gray;
-
     &__element {
       font-size: 16px;
     }
@@ -51,14 +25,6 @@
     input[type="tel"],
     input[type="number"],
     select {
-      color: $color-white;
-      border-bottom: 1px solid $color-mid-gray;
-      border-top: 0;
-      border-left: 0;
-      border-right: 0;
-      height: rem-calc(32px);
-      outline: none;
-
       @include fluid-type($breakpoint-sm, $breakpoint-lg, $body-font-size-min, $body-font-size-max);
     }
 
@@ -71,29 +37,30 @@
     textarea {
       border: 1px solid $color-mid-gray;
       outline: none;
-      color: $color-white;
 
       @include fluid-type($breakpoint-sm, $breakpoint-lg, $body-font-size-min, $body-font-size-max);
     }
 
-    input[type=submit] {
-      @extend .btn;
-
-      background-color: $color-mid-gray;
+    .wpcf7-submit {
+      border: none;
+      display: inline-block;
+      width: auto;
+      position: relative;
+      cursor: pointer;
       color: $color-primary;
-      line-height: $button-line-height;
-      font-weight: 600;
-      border: 2px solid $color-mid-gray;
-      outline: none;
+      min-width: auto;
+      padding: 0;
+      background-image: url("../images/small-right-arrow.svg");
+      transition: right $transition-normal ease-in-out;
+      background-repeat: no-repeat;
+      background-position: right 0.4rem;
+      background-size: rem-calc(28px);
+      padding-right: rem-calc(40px);
+      -webkit-transition: padding 0.1s ease-in-out;
 
-      @include u-all-state {
-        background-color: transparent;
-        color: $color-mid-gray;
+      &:hover {
+        padding-right: rem-calc(50px);
       }
-    }
-
-    .form__btn {
-      text-align: center;
     }
 
     .wpcf7-not-valid-tip {
@@ -166,8 +133,8 @@
       }
 
       .wpcf7-list-item-label::before {
-        top: 6px;
-        left: 1px;
+        top: 0;
+        left: 3px;
         width: 9px;
         height: 14px;
         border-top: 2px solid transparent;
@@ -195,7 +162,7 @@
         height: 0;
         border: 3px solid transparent;
         left: 6px;
-        top: 12px;
+        top: 8px;
         -webkit-transform: rotateZ(37deg);
         transform: rotateZ(37deg);
         -webkit-transform-origin: 20% 40%;
@@ -203,21 +170,22 @@
       }
 
       [type="checkbox"]:not(:checked) + .wpcf7-list-item-label::after {
-        height: 20px;
-        width: 20px;
+        height: 18px;
+        width: 18px;
         background-color: transparent;
-        border: 2px solid $color-mid-gray;
-        top: 4px;
+        border: 1px solid $color-secondary;
+        top: 0;
         z-index: 0;
+        border-radius: 4px;
       }
 
       [type="checkbox"]:checked + .wpcf7-list-item-label::after {
-        top: 4px;
-        width: 20px;
-        height: 20px;
-        border: 2px solid $color-mid-gray;
-        background-color: $color-mid-gray;
+        height: 18px;
+        width: 18px;
+        border: 1px solid $color-secondary;
+        top: 0;
         z-index: 0;
+        border-radius: 4px;
       }
     }
 
@@ -272,6 +240,20 @@
       }
     }
 
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+      -webkit-text-fill-color: $color-secondary !important;
+      -webkit-box-shadow: 0 0 0 1000px $color-white inset;
+      color: $color-secondary;
+    }
+
     .wpcf7-radio {
       margin-top: $spacing;
 
@@ -305,6 +287,36 @@
     .sent {
       .wpcf7-response-output {
         border: 2px solid green;
+      }
+    }
+
+    .content-block {
+      border: 1px solid hsla(0, 0%, 85%, 0.5);
+      margin-bottom: rem-calc(20px);
+      padding: rem-calc(40px) rem-calc(50px);
+      font-size: rem-calc(13px);
+
+      h3,
+      a {
+        font-family: $font-primary;
+        display: inline-block;
+        font-size: rem-calc(12px);
+        font-weight: 600;
+        letter-spacing: 0.24px;
+        line-height: 1.5;
+      }
+
+      h3 {
+        color: $color-primary;
+        padding-bottom: 10px;
+      }
+
+      a {
+        color: $color-dark-blue;
+      }
+
+      p {
+        margin-bottom: rem-calc(10px);
       }
     }
   }

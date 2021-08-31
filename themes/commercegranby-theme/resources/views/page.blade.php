@@ -6,5 +6,5 @@
     @include('partials.page-header')
     @include('partials.content-flexible')
 
-  @endwhile
+    @endwhile
 @endsection

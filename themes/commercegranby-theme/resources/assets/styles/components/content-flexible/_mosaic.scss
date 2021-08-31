@@ -6,13 +6,47 @@
 .cf-mosaic {
   position: relative;
 
-  @include media-breakpoint-up(medium) {
+  @include media-breakpoint-up(sm) {
+    .mosaic-tile:nth-child(2) {
+      margin-top: -40px;
+    }
+
+    &__top-intro {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
     .mosaic-tile:nth-child(2) {
       margin-top: -140px;
+    }
+
+    &__top-intro {
+      margin-bottom: 0;
     }
   }
 
   .mosaic-tile:nth-child(3) {
-    margin-top: 70px;
+    @include media-breakpoint-up(sm) {
+      margin-left: 50%;
+      margin-top: -140px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 70px;
+      margin-left: 0;
+    }
+  }
+
+  &.first-el {
+    margin-top: -40px;
+
+    @include media-breakpoint-up(md) {
+      margin-top: -80px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: -200px;
+    }
   }
 }

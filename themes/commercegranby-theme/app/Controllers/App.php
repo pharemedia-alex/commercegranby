@@ -38,6 +38,10 @@ class App extends Controller
 
     public function header() {
         $header_theme = get_field('header_theme');
+
+        if (is_404()) {
+            $header_theme = 'o-theme-header-dark';
+        }
         
         return (object) array(
             'theme' => $header_theme,

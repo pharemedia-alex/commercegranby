@@ -6,7 +6,7 @@
 .cf-featured-content {
   position: relative;
 
-  @include media-breakpoint-up(medium) {
+  @include media-breakpoint-up(md) {
     .featured-tile:nth-child(2) {
       margin-top: rem-calc(140px);
     }
