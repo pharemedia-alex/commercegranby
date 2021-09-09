@@ -68,10 +68,10 @@
     <a class="brand" href="{{ home_url('/') }}" title="{{ get_bloginfo('name', 'display') }}">
       @include('partials.logo', ['header_logo' => ''] )
     </a>
-    @if ( has_nav_menu('primary_navigation') )
+    @if ( has_nav_menu('mobile_navigation') )
       <nav class="nav-primary">
-        @if (has_nav_menu('primary_navigation'))
-          {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav -t-menu']) !!}
+        @if (has_nav_menu('mobile_navigation'))
+          {!! wp_nav_menu(['theme_location' => 'mobile_navigation', 'menu_class' => 'nav -t-menu']) !!}
         @endif
       </nav>
     @endif

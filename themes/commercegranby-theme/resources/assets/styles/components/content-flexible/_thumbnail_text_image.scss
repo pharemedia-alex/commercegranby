@@ -1,0 +1,78 @@
+// ==========================================================================
+// Components / content-flexible / thumbnail text image
+
+// ==========================================================================
+
+.cf-thumbnail {
+  .row {
+    align-items: center;
+  }
+
+  .round-image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: rem-calc(20px);
+
+    @include media-breakpoint-only(sm) {
+      width: 50%;
+      padding-top: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include media-breakpoint-only(md) {
+      width: 50%;
+      padding-top: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__img {
+    &:not(.round-image) {
+      @include media-breakpoint-down(sm) {
+        max-width: 200px;
+      }
+    }
+  }
+
+  &__text {
+    overflow: hidden;
+  }
+
+  &__elements {
+    &.horizontal-layout {
+      &:not(:first-child) {
+        .o-wrapper {
+          padding-top: rem-calc($spacing-medium / 2);
+
+          @include media-breakpoint-up(lg) {
+            padding-top: rem-calc($spacing-medium);
+          }
+        }
+      }
+    }
+
+    &.vertical-layout {
+      .o-wrapper {
+        padding-top: rem-calc($spacing-medium / 2);
+
+        @include media-breakpoint-up(lg) {
+          padding-top: rem-calc($spacing-medium);
+        }
+      }
+    }
+  }
+}

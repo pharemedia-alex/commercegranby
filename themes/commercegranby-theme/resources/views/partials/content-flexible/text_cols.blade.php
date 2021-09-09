@@ -3,17 +3,17 @@
   class="cf-text-cols">
   <div class="o-container --pt-xl">
 
-    <div class="row -t-animate">
-      @if ( !empty($content_block->main_title) )
+    @if ( !empty($content_block->main_title) )
+      <div class="row -t-animate">
         <div class="col-12">
           <h2 class="cf-text-cols__title u-pb-sm">{!! $content_block->main_title !!}</h2>
         </div>
-      @endif
-    </div>
+      </div>
+    @endif
 
     <div class="row cf-text-cols__elements">
       @foreach ($content_block->columns as $column )
-        <div class="col-12 col-sm-6 -t-animate">
+        <div class="col-12 {!! (count($content_block->columns) > 1 ) ? 'col-md-6' : 'col-md-10' !!} -t-animate">
 
           @if ( !empty($column['image']) )
             <div class="o-wrapper --pb-sm cf-text-cols__img">

@@ -4,7 +4,10 @@
     <div class="row">
       <div class="col-12">
         <div class="o-wrapper">
-          <h2 class="cf-text-intro__title">{!! $content_block->title !!}</h2>
+          @if ( $content_block->title )
+            <h2 class="cf-text-intro__title">{!! $content_block->title !!}</h2>
+          @endif
+          
           <div class="cf-text-intro__text o-content">{!! $content_block->text !!}</div>
           
           @if( $content_block->add_button===true )

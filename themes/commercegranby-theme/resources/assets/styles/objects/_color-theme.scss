@@ -92,11 +92,21 @@
       //link effect border
       .nav-primary > ul > li {
         &::after {
-          border-bottom-color: $color-white;
+          border-bottom-color: $color-secondary;
         }
 
         &.is-hover {
           color: $color-mid-gray;
+        }
+
+        &.current-menu-item {
+          color: $color-mid-gray;
+
+          &:not(.is-hover) {
+            &::after {
+              border-bottom-color: $color-white;
+            }
+          }
         }
       }
 

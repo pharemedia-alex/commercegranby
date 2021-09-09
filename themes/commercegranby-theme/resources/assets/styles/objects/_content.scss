@@ -75,6 +75,6 @@
 %content {
   @include fluid-type($breakpoint-sm, $breakpoint-xl, $body-font-size-min, $body-font-size-max);
 
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   line-height: 1.3;
 }

@@ -46,6 +46,7 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'commercegranby-theme'),
+        'mobile_navigation' => __('Mobile Navigation', 'commercegranby-theme'),
         'secondary_navigation' => __('Top menu', 'commercegranby-theme'),
         'footer_navigation' => __('Footer menu', 'commercegranby-theme')
     ]);
