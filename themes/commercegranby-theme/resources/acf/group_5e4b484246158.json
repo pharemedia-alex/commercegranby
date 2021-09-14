@@ -80,8 +80,7 @@
                     },
                     "choices": {
                         "none": "none",
-                        "dg-bg": "dark green",
-                        "lg-bg": "light green"
+                        "dg-bg": "dark red"
                     },
                     "default_value": [
                         "dg-bg"
@@ -283,5 +282,5 @@
     ],
     "active": 1,
     "description": "Options for the page header",
-    "modified": 1601047462
+    "modified": 1631149327
 }

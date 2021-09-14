@@ -53,24 +53,26 @@
   }
 
   &__elements {
-    &.horizontal-layout {
-      &:not(:first-child) {
-        .o-wrapper {
-          padding-top: rem-calc($spacing-medium / 2);
-
-          @include media-breakpoint-up(lg) {
-            padding-top: rem-calc($spacing-medium);
-          }
-        }
-      }
-    }
-
     &.vertical-layout {
       .o-wrapper {
         padding-top: rem-calc($spacing-medium / 2);
 
         @include media-breakpoint-up(lg) {
           padding-top: rem-calc($spacing-medium);
+        }
+      }
+    }
+
+    &.horizontal-layout {
+      &:not(:first-child) {
+        padding-top: 30px;
+
+        .o-wrapper {
+          padding-top: rem-calc($spacing-medium / 2);
+
+          @include media-breakpoint-up(lg) {
+            padding-top: rem-calc($spacing-medium);
+          }
         }
       }
     }

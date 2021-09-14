@@ -64,21 +64,20 @@
     }
 
     .wpcf7-not-valid-tip {
-      color: #ff9963;
+      color: #f79021;
       font-size: 1rem;
-      font-weight: 400;
+      font-weight: 500;
       display: block;
       margin-top: 4px;
     }
 
     .wpcf7-not-valid {
-      border-bottom-color: #ff9963 !important;//#f55723 !important;
+      border-color: #f79021 !important;
     }
 
     .wpcf7-response-output {
       width: 100%;
       margin: $spacing-small 0;
-      font-size: rem-calc(18px);
       padding: 10px;
       position: relative;
       display: none;
@@ -279,13 +278,14 @@
 
     .invalid {
       .wpcf7-response-output {
-        border: 1px solid #ff9963;
-        color: #ff9963;
+        display: block;
+        border: 2px solid #f79021;
       }
     }
 
     .sent {
       .wpcf7-response-output {
+        display: block;
         border: 2px solid green;
       }
     }

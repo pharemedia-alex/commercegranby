@@ -1,7 +1,7 @@
 <section 
   {!! (!empty( $content_block->section_id )) ? 'id="'.$content_block->section_id.'"' : '' !!} 
   class="cf-thumbnail">
-  <div class="o-container --pt-lg">
+  <div class="o-container --pt-xl">
 
     @if ( !empty( $content_block->title ) )
       <div class="row -t-animate">
@@ -37,7 +37,7 @@
 
       @foreach ( $content_block->elements as $el )
 
-        <div class="row cf-thumbnail__elements horizontal-layout u-pt-sm">
+        <div class="row cf-thumbnail__elements horizontal-layout">
 
             <div class="col-12 col-sm-4 col-md-4 col-lg-3 ">
 

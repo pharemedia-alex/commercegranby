@@ -16,7 +16,7 @@
 
       <section class="contact-form -t-animate">
         
-        <div class="o-container --pb-xl">
+        <div class="o-container">
 
           <div class="row">
             <div class="col-12 col-lg-8">
