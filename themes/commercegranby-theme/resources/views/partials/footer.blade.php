@@ -44,8 +44,8 @@
   <div class="sub-footer">
     <div class="sub-footer">
       <div class="copyright">
-        &copy; {!! __('Commerce Tourisme Granby Région', 'commercegranby-theme') . ' ' . date("Y") !!}&nbsp; - &nbsp;
-        <span><?php _e('<a href="https://pharemedia.ca" title="Produit par Phare Media" target="_blank">produit par PHARE</a>', 'commercegranby-theme'); ?></span>
+        &copy; {!! __('Commerce Tourisme Granby région', 'commercegranby-theme') . ' ' . date("Y") !!}&nbsp; - &nbsp;
+        <span><?php _e('<a href="https://pharemedia.com" title="Produit par Phare Media" target="_blank">produit par PHARE</a>', 'commercegranby-theme'); ?></span>
       </div>
     </div>
   </div>
